@@ -2,69 +2,90 @@
 @tailwind components;
 @tailwind utilities;
 
+/* styles/globals.css */
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Colores de Fondo y Foreground */
+    --background: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    /* Colores de Tarjeta (Card) */
+    --card: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --card-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    /* Colores de Popover */
+    --popover: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --popover-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Colores Primarios */
+    --primary: 51 100% 50%; /* sunbeam: #FFD700 */
+    --primary-foreground: 0 0% 100%; /* white: #FFFFFF */
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Colores Secundarios */
+    --secondary: 197 71% 73%; /* sky: #87CEEB */
+    --secondary-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Colores Muted */
+    --muted: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --muted-foreground: 197 71% 73%; /* sky: #87CEEB */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Colores de Acento */
+    --accent: 39 100% 50%; /* solarAccent: #FFA500 */
+    --accent-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Colores Destructivos */
+    --destructive: 15 100% 63%; /* sunset: #FF8A5C */
+    --destructive-foreground: 0 0% 100%; /* white: #FFFFFF */
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Colores de Borde, Input y Ring */
+    --border: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --input: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --ring: 51 100% 50%; /* sunbeam: #FFD700 */
 
+    /* Radio de Bordes */
     --radius: 0.5rem;
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Colores de Fondo y Foreground en Modo Oscuro */
+    --background: 210 24% 28%; /* dusk: #2C3E50 */
+    --foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    /* Colores de Tarjeta (Card) en Modo Oscuro */
+    --card: 210 24% 28%; /* dusk: #2C3E50 */
+    --card-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    /* Colores de Popover en Modo Oscuro */
+    --popover: 210 24% 28%; /* dusk: #2C3E50 */
+    --popover-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    /* Colores Primarios en Modo Oscuro */
+    --primary: 51 100% 50%; /* sunbeam: #FFD700 */
+    --primary-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    /* Colores Secundarios en Modo Oscuro */
+    --secondary: 197 71% 73%; /* sky: #87CEEB */
+    --secondary-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    /* Colores Muted en Modo Oscuro */
+    --muted: 210 24% 28%; /* dusk: #2C3E50 */
+    --muted-foreground: 197 71% 73%; /* sky: #87CEEB */
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    /* Colores de Acento en Modo Oscuro */
+    --accent: 39 100% 50%; /* solarAccent: #FFA500 */
+    --accent-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    /* Colores Destructivos en Modo Oscuro */
+    --destructive: 15 100% 63%; /* sunset: #FF8A5C */
+    --destructive-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    /* Colores de Borde, Input y Ring en Modo Oscuro */
+    --border: 210 24% 28%; /* dusk: #2C3E50 */
+    --input: 210 24% 28%; /* dusk: #2C3E50 */
+    --ring: 51 100% 50%; /* sunbeam: #FFD700 */
   }
 }
+
 
 @layer base {
   * {
