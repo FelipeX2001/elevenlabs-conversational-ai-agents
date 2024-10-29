@@ -107,26 +107,26 @@ export default function VoiceAssistant() {
               {connectionStatus}
             </Badge>
           </div>
-  
+
           {/* Base Circle */}
           <div className='relative w-full h-full'>
             <div
               className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isActive ? 'bg-solarAccent' : 'bg-muted'
+                isActive ? 'bg-[#eb5e28]' : 'bg-[#403d39]'
               }`}
             />
-            <div className='absolute inset-[10%] rounded-full bg-background' />
+            <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
             {/* Pulse Effects */}
             {isSpeaking && (
               <div className='absolute inset-[15%]'>
-                <div className='absolute inset-0 rounded-full bg-solarAccent opacity-20 animate-pulse-fast' />
-                <div className='absolute inset-0 rounded-full bg-solarAccent opacity-15 animate-pulse-medium' />
-                <div className='absolute inset-0 rounded-full bg-solarAccent opacity-10 animate-pulse-slow' />
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-20 animate-pulse-fast' />
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-15 animate-pulse-medium' />
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-10 animate-pulse-slow' />
               </div>
             )}
           </div>
         </motion.div>
-  
+
         {/* Control Buttons */}
         <div className='space-y-4'>
           {/* Microphone button */}
@@ -136,8 +136,8 @@ export default function VoiceAssistant() {
             onClick={isActive ? endConversation : startConversation}
             className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
               isActive
-                ? 'bg-accent text-foreground'
-                : 'bg-muted text-background'
+                ? 'bg-[#eb5e28] text-[#fffcf2]'
+                : 'bg-[#ccc5b9] text-[#252422]'
             }`}
           >
             {isActive ? (
@@ -152,19 +152,19 @@ export default function VoiceAssistant() {
               </>
             )}
           </motion.button>
-  
+
           {/* Show/Hide chat button */}
           <motion.button
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowChat(!showChat)}
-            className='px-4 py-2 rounded-full bg-muted text-background text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
+            className='px-4 py-2 rounded-full bg-[#ccc5b9] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
           >
             <MessageCircle className='w-4 h-4' />
             <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
           </motion.button>
         </div>
-  
+
         {/* Chat area */}
         <AnimatePresence>
           {showChat && (
@@ -173,19 +173,19 @@ export default function VoiceAssistant() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className='mt-4 bg-card rounded-xl overflow-hidden'
+              className='mt-4 bg-[#403d39] rounded-xl overflow-hidden'
             >
               <div className='flex justify-end p-2'>
                 <button
                   onClick={() => downloadTranscript(messages)}
-                  className='text-muted-foreground hover:text-accent transition-colors'
+                  className='text-[#ccc5b9] hover:text-[#eb5e28] transition-colors'
                 >
                   <Download className='w-5 h-5' />
                 </button>
               </div>
               <div
                 ref={scrollAreaRef}
-                className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-muted-foreground scrollbar-track-background'
+                className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#ccc5b9] scrollbar-track-[#252422]'
               >
                 {messages.map((message, index) => (
                   <div
@@ -198,16 +198,16 @@ export default function VoiceAssistant() {
                   >
                     <div className='flex-shrink-0'>
                       {message.source === 'user' ? (
-                        <User className='w-6 h-6 text-accent' />
+                        <User className='w-6 h-6 text-[#eb5e28]' />
                       ) : (
-                        <Bot className='w-6 h-6 text-muted-foreground' />
+                        <Bot className='w-6 h-6 text-[#ccc5b9]' />
                       )}
                     </div>
                     <div
                       className={`p-3 rounded-lg max-w-[80%] ${
                         message.source === 'user'
-                          ? 'bg-accent text-foreground'
-                          : 'bg-muted text-background'
+                          ? 'bg-[#eb5e28] text-[#fffcf2]'
+                          : 'bg-[#ccc5b9] text-[#252422]'
                       }`}
                     >
                       <p className='text-sm'>{message.message}</p>
@@ -221,5 +221,4 @@ export default function VoiceAssistant() {
       </div>
     </div>
   )
-  
 }
