@@ -112,16 +112,16 @@ export default function VoiceAssistant() {
           <div className='relative w-full h-full'>
             <div
               className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isActive ? 'bg-[#eb5e28]' : 'bg-[#403d39]'
+                isActive ? 'bg-[#6EB846]' : 'bg-[#403d39]'
               }`}
             />
             <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
             {/* Pulse Effects */}
             {isSpeaking && (
               <div className='absolute inset-[15%]'>
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-20 animate-pulse-fast' />
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-15 animate-pulse-medium' />
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-10 animate-pulse-slow' />
+                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-20 animate-pulse-fast' />
+                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-15 animate-pulse-medium' />
+                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-10 animate-pulse-slow' />
               </div>
             )}
           </div>
@@ -136,8 +136,8 @@ export default function VoiceAssistant() {
             onClick={isActive ? endConversation : startConversation}
             className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
               isActive
-                ? 'bg-[#eb5e28] text-[#fffcf2]'
-                : 'bg-[#ccc5b9] text-[#252422]'
+                ? 'bg-[#6EB846] text-[#fffcf2]'
+                : 'bg-[#F6D707] text-[#252422]'
             }`}
           >
             {isActive ? (
@@ -158,7 +158,7 @@ export default function VoiceAssistant() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => setShowChat(!showChat)}
-            className='px-4 py-2 rounded-full bg-[#ccc5b9] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
+            className='px-4 py-2 rounded-full bg-[#F6D707] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
           >
             <MessageCircle className='w-4 h-4' />
             <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
@@ -178,14 +178,14 @@ export default function VoiceAssistant() {
               <div className='flex justify-end p-2'>
                 <button
                   onClick={() => downloadTranscript(messages)}
-                  className='text-[#ccc5b9] hover:text-[#eb5e28] transition-colors'
+                  className='text-[#F6D707] hover:text-[#6EB846] transition-colors'
                 >
                   <Download className='w-5 h-5' />
                 </button>
               </div>
               <div
                 ref={scrollAreaRef}
-                className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#ccc5b9] scrollbar-track-[#252422]'
+                className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#F6D707] scrollbar-track-[#252422]'
               >
                 {messages.map((message, index) => (
                   <div
@@ -198,16 +198,16 @@ export default function VoiceAssistant() {
                   >
                     <div className='flex-shrink-0'>
                       {message.source === 'user' ? (
-                        <User className='w-6 h-6 text-[#eb5e28]' />
+                        <User className='w-6 h-6 text-[#6EB846]' />
                       ) : (
-                        <Bot className='w-6 h-6 text-[#ccc5b9]' />
+                        <Bot className='w-6 h-6 text-[#F6D707]' />
                       )}
                     </div>
                     <div
                       className={`p-3 rounded-lg max-w-[80%] ${
                         message.source === 'user'
-                          ? 'bg-[#eb5e28] text-[#fffcf2]'
-                          : 'bg-[#ccc5b9] text-[#252422]'
+                          ? 'bg-[#6EB846] text-[#fffcf2]'
+                          : 'bg-[#F6D707] text-[#252422]'
                       }`}
                     >
                       <p className='text-sm'>{message.message}</p>
