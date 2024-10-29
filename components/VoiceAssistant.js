@@ -112,7 +112,7 @@ export default function VoiceAssistant() {
           <div className='relative w-full h-full'>
             <div
               className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isActive ? 'bg-[#6EB846]' : 'bg-[#403d39]'
+                isActive ? 'bg-[#6EB846]' : 'bg-[#0A830D]'
               }`}
             />
             <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
@@ -142,7 +142,7 @@ export default function VoiceAssistant() {
           >
             {isActive ? (
               <>
-                <span className='mr-2'>End</span>
+                <span className='mr-2'>Terminar</span>
                 <MicOff className='w-6 h-6' />
               </>
             ) : (
@@ -173,7 +173,7 @@ export default function VoiceAssistant() {
               animate={{ height: 'auto', opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className='mt-4 bg-[#403d39] rounded-xl overflow-hidden'
+              className='mt-4 bg-[#0A830D] rounded-xl overflow-hidden'
             >
               <div className='flex justify-end p-2'>
                 <button
