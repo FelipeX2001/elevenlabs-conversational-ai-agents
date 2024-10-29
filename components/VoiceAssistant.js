@@ -52,7 +52,7 @@ export default function VoiceAssistant() {
         onStatusChange: (status) => {
           console.log('Connection status:', status)
           setConnectionStatus(
-            status.status === 'connected' ? 'connected' : 'disconnected'
+            status.status === 'connected' ? 'Conectado' : 'Desconectado'
           )
         },
         onModeChange: (mode) => {
@@ -173,7 +173,7 @@ export default function VoiceAssistant() {
       animate={{ height: 'auto', opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className='mt-4 bg-[#9df562] rounded-xl overflow-hidden'
+      className='mt-4 bg-[#f5f5f5] rounded-xl overflow-hidden'
     >
       <div className='flex justify-end p-2'>
         <button
