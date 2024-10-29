@@ -42,6 +42,14 @@
     --input: 60 100% 94%; /* solarHighlight: #FFFACD */
     --ring: 51 100% 50%; /* sunbeam: #FFD700 */
 
+    /* Colores para el Badge */
+    --success: 122 39% 49%; /* foliage: #4CAF50 */
+    --success-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --warning: 39 100% 50%; /* solarAccent: #FFA500 */
+    --warning-foreground: 210 24% 28%; /* dusk: #2C3E50 */
+    --error: 15 100% 63%; /* sunset: #FF8A5C */
+    --error-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
+
     /* Radio de Bordes */
     --radius: 0.5rem;
   }
@@ -83,6 +91,14 @@
     --border: 210 24% 28%; /* dusk: #2C3E50 */
     --input: 210 24% 28%; /* dusk: #2C3E50 */
     --ring: 51 100% 50%; /* sunbeam: #FFD700 */
+
+    /* Colores para el Badge en Modo Oscuro */
+    --success: 122 39% 49%; /* foliage: #4CAF50 */
+    --success-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --warning: 39 100% 50%; /* solarAccent: #FFA500 */
+    --warning-foreground: 210 24% 28%; /* dusk: #2C3E50 */
+    --error: 15 100% 63%; /* sunset: #FF8A5C */
+    --error-foreground: 60 100% 94%; /* solarHighlight: #FFFACD */
   }
 }
 
