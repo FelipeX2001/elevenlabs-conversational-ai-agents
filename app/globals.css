@@ -6,11 +6,11 @@
 @layer base {
   :root {
     /* Colores de Fondo y Foreground */
-    --background: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --background: 0 0% 100%; /* white: #FFFFFF */
     --foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
     /* Colores de Tarjeta (Card) */
-    --card: 60 100% 94%; /* solarHighlight: #FFFACD */
+    --card: 0 0% 100%; /* white: #FFFFFF */
     --card-foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
     /* Colores de Popover */
