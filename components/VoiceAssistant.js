@@ -57,7 +57,7 @@ export default function VoiceAssistant() {
         },
         onModeChange: (mode) => {
           console.log('mode', mode)
-          setIsSpeaking(mode.mode === 'speaking')
+          setIsSpeaking(mode.mode === 'Hablando')
         },
       })
       setConversation(conv)
@@ -148,7 +148,7 @@ export default function VoiceAssistant() {
             ) : (
               <>
                 <Mic className='w-6 h-6' />
-                <span className='ml-2'>Start</span>
+                <span className='ml-2'>Iniciar</span>
               </>
             )}
           </motion.button>
@@ -161,7 +161,7 @@ export default function VoiceAssistant() {
             className='px-4 py-2 rounded-full bg-[#ccc5b9] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
           >
             <MessageCircle className='w-4 h-4' />
-            <span>{showChat ? 'Hide Chat' : 'Show Chat'}</span>
+            <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
           </motion.button>
         </div>
 

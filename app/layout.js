@@ -4,8 +4,8 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'ElevenLabs Conversation App',
-  description: 'A futuristic conversation app using ElevenLabs AI',
+  title: 'GIA - Agente de Cambio',
+  description: 'Green Intelligence Assistant',
 }
 
 export default function RootLayout({ children }) {
