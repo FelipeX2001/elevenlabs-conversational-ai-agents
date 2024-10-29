@@ -109,61 +109,62 @@ export default function VoiceAssistant() {
           </div>
 
           {/* Base Circle */}
-          <div className='relative w-full h-full'>
-            <div
-              className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isActive ? 'bg-[#eb5e28]' : 'bg-[#403d39]'
-              }`}
-            />
-            <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
-            {/* Pulse Effects */}
-            {isSpeaking && (
-              <div className='absolute inset-[15%]'>
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-20 animate-pulse-fast' />
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-15 animate-pulse-medium' />
-                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-10 animate-pulse-slow' />
-              </div>
-            )}
-          </div>
-        </motion.div>
+<div className='relative w-full h-full'>
+  <div
+    className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+      isActive ? 'bg-solarAccent' : 'bg-muted'
+    }`}
+  />
+  <div className='absolute inset-[10%] rounded-full bg-background' />
+  {/* Pulse Effects */}
+  {isSpeaking && (
+    <div className='absolute inset-[15%]'>
+      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-20 animate-pulse-fast' />
+      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-15 animate-pulse-medium' />
+      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-10 animate-pulse-slow' />
+    </div>
+  )}
+</div>
+</motion.div>
 
-        {/* Control Buttons */}
-        <div className='space-y-4'>
-          {/* Microphone button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={isActive ? endConversation : startConversation}
-            className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
-              isActive
-                ? 'bg-[#eb5e28] text-[#fffcf2]'
-                : 'bg-[#ccc5b9] text-[#252422]'
-            }`}
-          >
-            {isActive ? (
-              <>
-                <span className='mr-2'>End</span>
-                <MicOff className='w-6 h-6' />
-              </>
-            ) : (
-              <>
-                <Mic className='w-6 h-6' />
-                <span className='ml-2'>Iniciar</span>
-              </>
-            )}
-          </motion.button>
+{/* Control Buttons */}
+<div className='space-y-4'>
+  {/* Microphone button */}
+  <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={isActive ? endConversation : startConversation}
+    className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
+      isActive
+        ? 'bg-solarAccent text-foreground'
+        : 'bg-muted text-background'
+    }`}
+  >
+    {isActive ? (
+      <>
+        <span className='mr-2'>End</span>
+        <MicOff className='w-6 h-6' />
+      </>
+    ) : (
+      <>
+        <Mic className='w-6 h-6' />
+        <span className='ml-2'>Iniciar</span>
+      </>
+    )}
+  </motion.button>
 
-          {/* Show/Hide chat button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setShowChat(!showChat)}
-            className='px-4 py-2 rounded-full bg-[#ccc5b9] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
-          >
-            <MessageCircle className='w-4 h-4' />
-            <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
-          </motion.button>
-        </div>
+  {/* Show/Hide chat button */}
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => setShowChat(!showChat)}
+    className='px-4 py-2 rounded-full bg-muted text-background text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
+  >
+    <MessageCircle className='w-4 h-4' />
+    <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
+  </motion.button>
+</div>
+
 
         {/* Chat area */}
         <AnimatePresence>
