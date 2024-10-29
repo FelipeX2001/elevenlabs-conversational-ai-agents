@@ -112,10 +112,10 @@ export default function VoiceAssistant() {
 <div className='relative w-full h-full'>
   <div
     className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-      isActive ? 'bg-[#7CB342]' : 'bg-[#33691E]'
+      isActive ? 'bg-[#7CB342]' : 'bg-[#9df562]'
     }`}
   />
-  <div className='absolute inset-[10%] rounded-full bg-[#424242]' />
+  <div className='absolute inset-[10%] rounded-full bg-[#92c773]' />
   {/* Pulse Effects */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
@@ -137,7 +137,7 @@ export default function VoiceAssistant() {
     className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
       isActive
         ? 'bg-[#7CB342] text-[#FAF9F6]'
-        : 'bg-[#FFB300] text-[#424242]'
+        : 'bg-[#ffdc2e] text-[#424242]'
     }`}
   >
     {isActive ? (
@@ -158,7 +158,7 @@ export default function VoiceAssistant() {
     whileHover={{ scale: 1.05 }}
     whileTap={{ scale: 0.95 }}
     onClick={() => setShowChat(!showChat)}
-    className='px-4 py-2 rounded-full bg-[#FFB300] text-[#424242] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
+    className='px-4 py-2 rounded-full bg-[#ffdc2e] text-[#424242] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
   >
     <MessageCircle className='w-4 h-4' />
     <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
@@ -173,19 +173,19 @@ export default function VoiceAssistant() {
       animate={{ height: 'auto', opacity: 1 }}
       exit={{ height: 0, opacity: 0 }}
       transition={{ duration: 0.3 }}
-      className='mt-4 bg-[#33691E] rounded-xl overflow-hidden'
+      className='mt-4 bg-[#9df562] rounded-xl overflow-hidden'
     >
       <div className='flex justify-end p-2'>
         <button
           onClick={() => downloadTranscript(messages)}
-          className='text-[#FFB300] hover:text-[#7CB342] transition-colors'
+          className='text-[#ffdc2e] hover:text-[#7CB342] transition-colors'
         >
           <Download className='w-5 h-5' />
         </button>
       </div>
       <div
         ref={scrollAreaRef}
-        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#FFB300] scrollbar-track-[#424242]'
+        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#ffdc2e] scrollbar-track-[#424242]'
       >
         {messages.map((message, index) => (
           <div
@@ -200,14 +200,14 @@ export default function VoiceAssistant() {
               {message.source === 'user' ? (
                 <User className='w-6 h-6 text-[#7CB342]' />
               ) : (
-                <Bot className='w-6 h-6 text-[#FFB300]' />
+                <Bot className='w-6 h-6 text-[#ffdc2e]' />
               )}
             </div>
             <div
               className={`p-3 rounded-lg max-w-[80%] ${
                 message.source === 'user'
                   ? 'bg-[#7CB342] text-[#FAF9F6]'
-                  : 'bg-[#FFB300] text-[#424242]'
+                  : 'bg-[#ffdc2e] text-[#424242]'
               }`}
             >
               <p className='text-sm'>{message.message}</p>
