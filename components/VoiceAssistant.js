@@ -109,115 +109,116 @@ export default function VoiceAssistant() {
           </div>
 
           {/* Base Circle */}
-          <div className='relative w-full h-full'>
-            <div
-              className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-                isActive ? 'bg-[#6EB846]' : 'bg-[#0A830D]'
-              }`}
-            />
-            <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
-            {/* Pulse Effects */}
-            {isSpeaking && (
-              <div className='absolute inset-[15%]'>
-                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-20 animate-pulse-fast' />
-                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-15 animate-pulse-medium' />
-                <div className='absolute inset-0 rounded-full bg-[#6EB846] opacity-10 animate-pulse-slow' />
-              </div>
-            )}
-          </div>
-        </motion.div>
+<div className='relative w-full h-full'>
+  <div
+    className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+      isActive ? 'bg-[#7CB342]' : 'bg-[#33691E]'
+    }`}
+  />
+  <div className='absolute inset-[10%] rounded-full bg-[#424242]' />
+  {/* Pulse Effects */}
+  {isSpeaking && (
+    <div className='absolute inset-[15%]'>
+      <div className='absolute inset-0 rounded-full bg-[#7CB342] opacity-20 animate-pulse-fast' />
+      <div className='absolute inset-0 rounded-full bg-[#7CB342] opacity-15 animate-pulse-medium' />
+      <div className='absolute inset-0 rounded-full bg-[#7CB342] opacity-10 animate-pulse-slow' />
+    </div>
+  )}
+</div>
+</motion.div>
 
-        {/* Control Buttons */}
-        <div className='space-y-4'>
-          {/* Microphone button */}
-          <motion.button
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-            onClick={isActive ? endConversation : startConversation}
-            className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
-              isActive
-                ? 'bg-[#6EB846] text-[#fffcf2]'
-                : 'bg-[#F6D707] text-[#252422]'
+{/* Control Buttons */}
+<div className='space-y-4'>
+  {/* Microphone button */}
+  <motion.button
+    whileHover={{ scale: 1.1 }}
+    whileTap={{ scale: 0.9 }}
+    onClick={isActive ? endConversation : startConversation}
+    className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
+      isActive
+        ? 'bg-[#7CB342] text-[#FAF9F6]'
+        : 'bg-[#FFB300] text-[#424242]'
+    }`}
+  >
+    {isActive ? (
+      <>
+        <span className='mr-2'>Terminar</span>
+        <MicOff className='w-6 h-6' />
+      </>
+    ) : (
+      <>
+        <Mic className='w-6 h-6' />
+        <span className='ml-2'>Iniciar</span>
+      </>
+    )}
+  </motion.button>
+
+  {/* Show/Hide chat button */}
+  <motion.button
+    whileHover={{ scale: 1.05 }}
+    whileTap={{ scale: 0.95 }}
+    onClick={() => setShowChat(!showChat)}
+    className='px-4 py-2 rounded-full bg-[#FFB300] text-[#424242] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
+  >
+    <MessageCircle className='w-4 h-4' />
+    <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
+  </motion.button>
+</div>
+
+{/* Chat area */}
+<AnimatePresence>
+  {showChat && (
+    <motion.div
+      initial={{ height: 0, opacity: 0 }}
+      animate={{ height: 'auto', opacity: 1 }}
+      exit={{ height: 0, opacity: 0 }}
+      transition={{ duration: 0.3 }}
+      className='mt-4 bg-[#33691E] rounded-xl overflow-hidden'
+    >
+      <div className='flex justify-end p-2'>
+        <button
+          onClick={() => downloadTranscript(messages)}
+          className='text-[#FFB300] hover:text-[#7CB342] transition-colors'
+        >
+          <Download className='w-5 h-5' />
+        </button>
+      </div>
+      <div
+        ref={scrollAreaRef}
+        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#FFB300] scrollbar-track-[#424242]'
+      >
+        {messages.map((message, index) => (
+          <div
+            key={index}
+            className={`flex items-start space-x-2 ${
+              message.source === 'user'
+                ? 'flex-row-reverse'
+                : 'flex-row'
             }`}
           >
-            {isActive ? (
-              <>
-                <span className='mr-2'>Terminar</span>
-                <MicOff className='w-6 h-6' />
-              </>
-            ) : (
-              <>
-                <Mic className='w-6 h-6' />
-                <span className='ml-2'>Iniciar</span>
-              </>
-            )}
-          </motion.button>
-
-          {/* Show/Hide chat button */}
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => setShowChat(!showChat)}
-            className='px-4 py-2 rounded-full bg-[#F6D707] text-[#252422] text-sm font-semibold flex items-center justify-center space-x-2 mx-auto'
-          >
-            <MessageCircle className='w-4 h-4' />
-            <span>{showChat ? 'Ocultar Chat' : 'Ver Chat'}</span>
-          </motion.button>
-        </div>
-
-        {/* Chat area */}
-        <AnimatePresence>
-          {showChat && (
-            <motion.div
-              initial={{ height: 0, opacity: 0 }}
-              animate={{ height: 'auto', opacity: 1 }}
-              exit={{ height: 0, opacity: 0 }}
-              transition={{ duration: 0.3 }}
-              className='mt-4 bg-[#0A830D] rounded-xl overflow-hidden'
+            <div className='flex-shrink-0'>
+              {message.source === 'user' ? (
+                <User className='w-6 h-6 text-[#7CB342]' />
+              ) : (
+                <Bot className='w-6 h-6 text-[#FFB300]' />
+              )}
+            </div>
+            <div
+              className={`p-3 rounded-lg max-w-[80%] ${
+                message.source === 'user'
+                  ? 'bg-[#7CB342] text-[#FAF9F6]'
+                  : 'bg-[#FFB300] text-[#424242]'
+              }`}
             >
-              <div className='flex justify-end p-2'>
-                <button
-                  onClick={() => downloadTranscript(messages)}
-                  className='text-[#F6D707] hover:text-[#6EB846] transition-colors'
-                >
-                  <Download className='w-5 h-5' />
-                </button>
-              </div>
-              <div
-                ref={scrollAreaRef}
-                className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#F6D707] scrollbar-track-[#252422]'
-              >
-                {messages.map((message, index) => (
-                  <div
-                    key={index}
-                    className={`flex items-start space-x-2 ${
-                      message.source === 'user'
-                        ? 'flex-row-reverse'
-                        : 'flex-row'
-                    }`}
-                  >
-                    <div className='flex-shrink-0'>
-                      {message.source === 'user' ? (
-                        <User className='w-6 h-6 text-[#6EB846]' />
-                      ) : (
-                        <Bot className='w-6 h-6 text-[#F6D707]' />
-                      )}
-                    </div>
-                    <div
-                      className={`p-3 rounded-lg max-w-[80%] ${
-                        message.source === 'user'
-                          ? 'bg-[#6EB846] text-[#fffcf2]'
-                          : 'bg-[#F6D707] text-[#252422]'
-                      }`}
-                    >
-                      <p className='text-sm'>{message.message}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+              <p className='text-sm'>{message.message}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </motion.div>
+  )}
+</AnimatePresence>
+
       </div>
     </div>
   )
