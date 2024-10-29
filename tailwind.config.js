@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */ 
+/** @type {import('tailwindcss').Config} */
 module.exports = {
   darkMode: ['class'],
   content: [
@@ -9,18 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        /* Paleta Solar Personalizada */
         sunrise: '#FFDD57', // Amarillo solar
-        sunset: '#FF8A5C',  // Naranja cálido
-        sky: '#87CEEB',      // Azul cielo claro
-        foliage: '#4CAF50',  // Verde follaje
-        dusk: '#2C3E50',     // Azul oscuro crepúsculo
-        sunbeam: '#FFD700',  // Dorado brillante
-        solarAccent: '#FFA500',     // Acento solar
-        solarHighlight: '#FFFACD',  // Destacado solar
-        white: '#FFFFFF',           // Blanco puro
-
-        /* Colores Basados en Variables CSS */
+        sunset: '#FF8A5C', // Naranja cálido
+        sky: '#87CEEB',     // Azul cielo claro
+        foliage: '#4CAF50', // Verde follaje
+        dusk: '#2C3E50',    // Azul oscuro crepúsculo
+        sunbeam: '#FFD700', // Dorado brillante
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {
@@ -54,8 +48,6 @@ module.exports = {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
-
-        /* Colores para Gráficos */
         chart: {
           1: 'hsl(var(--chart-1))',
           2: 'hsl(var(--chart-2))',
@@ -63,25 +55,11 @@ module.exports = {
           4: 'hsl(var(--chart-4))',
           5: 'hsl(var(--chart-5))',
         },
-
-        /* Colores de Estado Personalizados */
-        success: {
-          DEFAULT: 'hsl(var(--success))',
-          foreground: 'hsl(var(--success-foreground))',
-        },
-        warning: {
-          DEFAULT: 'hsl(var(--warning))',
-          foreground: 'hsl(var(--warning-foreground))',
-        },
-        error: {
-          DEFAULT: 'hsl(var(--error))',
-          foreground: 'hsl(var(--error-foreground))',
-        },
       },
       borderRadius: {
-        lg: 'var(--radius)',                // Radio grande basado en variable CSS
-        md: 'calc(var(--radius) - 2px)',    // Radio mediano
-        sm: 'calc(var(--radius) - 4px)',    // Radio pequeño
+        lg: 'var(--radius)',
+        md: 'calc(var(--radius) - 2px)',
+        sm: 'calc(var(--radius) - 4px)',
       },
       animation: {
         'pulse-fast': 'pulseEffect 1.2s cubic-bezier(0, 0, 0.2, 1) infinite',
@@ -106,9 +84,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('tailwindcss-animate'),      // Plugin para animaciones personalizadas
-    require('tailwind-scrollbar'),       // Plugin para estilizar scrollbars
-  ],
+  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')],
 }
-

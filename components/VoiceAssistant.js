@@ -109,23 +109,23 @@ export default function VoiceAssistant() {
           </div>
 
           {/* Base Circle */}
-<div className='relative w-full h-full'>
-  <div
-    className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-      isActive ? 'bg-solarAccent' : 'bg-muted'
-    }`}
-  />
-  <div className='absolute inset-[10%] rounded-full bg-background' />
-  {/* Pulse Effects */}
-  {isSpeaking && (
-    <div className='absolute inset-[15%]'>
-      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-20 animate-pulse-fast' />
-      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-15 animate-pulse-medium' />
-      <div className='absolute inset-0 rounded-full bg-solarAccent opacity-10 animate-pulse-slow' />
-    </div>
-  )}
-</div>
-</motion.div>
+          <div className='relative w-full h-full'>
+            <div
+              className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+                isActive ? 'bg-[#eb5e28]' : 'bg-[#403d39]'
+              }`}
+            />
+            <div className='absolute inset-[10%] rounded-full bg-[#252422]' />
+            {/* Pulse Effects */}
+            {isSpeaking && (
+              <div className='absolute inset-[15%]'>
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-20 animate-pulse-fast' />
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-15 animate-pulse-medium' />
+                <div className='absolute inset-0 rounded-full bg-[#eb5e28] opacity-10 animate-pulse-slow' />
+              </div>
+            )}
+          </div>
+        </motion.div>
 
         {/* Control Buttons */}
         <div className='space-y-4'>
