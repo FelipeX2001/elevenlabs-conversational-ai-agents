@@ -9,11 +9,12 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        floral: '#fffcf2',
-        timberwolf: '#ccc5b9',
-        olive: '#403d39',
-        eerie: '#252422',
-        flame: '#eb5e28',
+        sunrise: '#FFDD57', // Amarillo solar
+        sunset: '#FF8A5C', // Naranja cálido
+        sky: '#87CEEB',     // Azul cielo claro
+        foliage: '#4CAF50', // Verde follaje
+        dusk: '#2C3E50',    // Azul oscuro crepúsculo
+        sunbeam: '#FFD700', // Dorado brillante
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         card: {

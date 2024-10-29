@@ -133,7 +133,7 @@
   width: 70%;
   height: 70%;
   border-radius: 50%;
-  background-color: rgba(235, 94, 40, 0.4);
+  background-color: #6EB846;
   animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
