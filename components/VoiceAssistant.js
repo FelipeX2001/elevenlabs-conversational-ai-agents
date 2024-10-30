@@ -14,7 +14,7 @@ export default function VoiceAssistant() {
   const [isSpeaking, setIsSpeaking] = useState(false)
   const [isActive, setIsActive] = useState(false)
   const [showChat, setShowChat] = useState(false)
-  const [connectionStatus, setConnectionStatus] = useState('disconnected')
+  const [connectionStatus, setConnectionStatus] = useState('Iniciar para Conectar')
   const scrollAreaRef = useRef(null)
 
   useEffect(() => {
@@ -47,7 +47,7 @@ export default function VoiceAssistant() {
         },
         onError: (error) => {
           console.error('Conversation error:', error)
-          setConnectionStatus('disconnected')
+          setConnectionStatus('Iniciar para Conectar')
         },
         onStatusChange: (status) => {
           console.log('Connection status:', status)
@@ -65,7 +65,7 @@ export default function VoiceAssistant() {
       setConnectionStatus('connected')
     } catch (error) {
       console.error('Failed to start conversation:', error)
-      setConnectionStatus('disconnected')
+      setConnectionStatus('Iniciar para Conectar')
     }
   }
 
@@ -75,7 +75,7 @@ export default function VoiceAssistant() {
       setConversation(null)
       setIsSpeaking(false)
       setIsActive(false)
-      setConnectionStatus('disconnected')
+      setConnectionStatus('Iniciar para Conectar')
     }
   }
 
