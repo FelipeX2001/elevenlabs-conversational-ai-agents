@@ -109,19 +109,13 @@ export default function VoiceAssistant() {
           </div>
 
           {/* Base Circle */}
-          <div className='relative w-full h-full'>
-        <div
-          className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-            isActive ? 'bg-[#7CB342]' : 'bg-[#9df562]'
-          }`}
-        />
-        <div className='absolute inset-[10%] rounded-full flex items-center justify-center'>
-          <img
-            src=".\images\gia_2.png"
-            alt="Foto de Perfil GIA"
-            className="w-3/4 h-3/4 object-cover rounded-full"
-          />
-        </div>
+<div className='relative w-full h-full'>
+  <div
+    className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+      isActive ? 'bg-[#7CB342]' : 'bg-[#9df562]'
+    }`}
+  />
+  <div className='absolute inset-[10%] rounded-full bg-[#92c773]' />
   {/* Pulse Effects */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
