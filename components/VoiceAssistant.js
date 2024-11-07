@@ -195,7 +195,7 @@ export default function VoiceAssistant() {
       </div>
       <div
         ref={scrollAreaRef}
-        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#050a26] scrollbar-track-[#7CECFF]'
+        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#7CECFF] scrollbar-track-[#050a26]' 
       >
         {messages.map((message, index) => (
           <div
