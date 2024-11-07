@@ -1,8 +1,11 @@
+/* styles/globals.css */
+
+/* Directivas de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* styles/globals.css */
+/* Definición de variables y estilos base */
 @layer base {
   :root {
     /* Colores de Fondo y Foreground */
@@ -52,6 +55,13 @@
 
     /* Radio de Bordes */
     --radius: 0.5rem;
+
+    /* Colores de Chart */
+    --chart-1: 51 100% 50%;
+    --chart-2: 197 71% 73%;
+    --chart-3: 60 100% 94%;
+    --chart-4: 15 100% 63%;
+    --chart-5: 122 39% 49%;
   }
 
   .dark {
@@ -102,105 +112,37 @@
   }
 }
 
-
+/* Aplicación de utilidades personalizadas utilizando clases definidas en Tailwind */
 @layer base {
+  /* Aplica el color de borde personalizado a todos los elementos */
   * {
-    @apply border-border;
+    @apply border-borderCustom;
   }
+
+  /* Aplica los colores de fondo y texto personalizados al cuerpo de la página */
   body {
-    @apply bg-background text-foreground;
+    @apply bg-bgCustom text-textCustom;
   }
 }
 
-@keyframes pulse1 {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1.05);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse2 {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.4;
-  }
-  50% {
-    transform: scale(1);
-    opacity: 0.2;
-  }
-  100% {
-    transform: scale(1.1);
-    opacity: 0;
-  }
-}
-
-@keyframes pulse {
-  0% {
-    transform: scale(0.8);
-    opacity: 0.7;
-  }
-  100% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-}
-
-@keyframes glow {
-  0% {
-    opacity: 0.3;
-  }
-  50% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 0.3;
-  }
-}
-
+/* Clase personalizada para el anillo de pulsación sin animación */
 .pulse-ring {
-  position: absolute;
-  width: 70%;
-  height: 70%;
-  border-radius: 50%;
-  background-color: #6EB846;
-  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  @apply absolute w-[70%] h-[70%] rounded-full bg-foreground;
+  /* La animación se aplicará directamente en el HTML/JSX usando clases de Tailwind */
 }
 
-.animate-glow {
-  animation: glow 2s ease-in-out infinite;
-}
+/* Nota: Todas las animaciones personalizadas se aplican mediante las clases de Tailwind, por ejemplo: animate-pulse1, animate-glow, etc. */
 
-@keyframes pulseEffect {
-  0% {
-    transform: scale(0.95);
-    opacity: 0.5;
-  }
-  50% {
-    transform: scale(1.05);
-    opacity: 0.25;
-  }
-  100% {
-    transform: scale(0.95);
-    opacity: 0.5;
-  }
-}
+/* Elimina o comenta cualquier definición de animaciones y clases de animación personalizadas */
+/*
+@keyframes pulse1 { ... }
+@keyframes pulse2 { ... }
+@keyframes pulse { ... }
+@keyframes glow { ... }
 
-.animate-pulse-fast {
-  animation: pulseEffect 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
+.animate-glow { ... }
+.animate-pulse-fast { ... }
+.animate-pulse-medium { ... }
+.animate-pulse-slow { ... }
+*/
 
-.animate-pulse-medium {
-  animation: pulseEffect 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
-
-.animate-pulse-slow {
-  animation: pulseEffect 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-}
