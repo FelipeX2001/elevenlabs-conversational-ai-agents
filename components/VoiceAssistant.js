@@ -112,7 +112,7 @@ export default function VoiceAssistant() {
 <div className='relative w-full h-full'>
   <div
     className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-      isActive ? 'bg-[#7CECFF]' : 'bg-[#050a26]'
+      isActive ? 'bg-[#050a26]' : 'bg-[#7CECFF]' 
     }`}
   />
   <div className='absolute inset-[10%] rounded-full bg-[#7CECFF]' />
@@ -206,7 +206,7 @@ export default function VoiceAssistant() {
             <div
               className={`p-3 rounded-lg max-w-[80%] ${
                 message.source === 'user'
-                  ? 'bg-[#7CECFF] text-[#FAF9F6]'
+                  ? 'bg-[#050a26] text-[#FAF9F6]'
                   : 'bg-[#ffffff] text-[#000000]'
               }`}
             >
