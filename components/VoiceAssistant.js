@@ -113,14 +113,14 @@ export default function VoiceAssistant() {
   {/* Aro Exterior */}
   <div
     className={`absolute inset-0 rounded-full transition-colors duration-400 ${
-      isActive ? 'bg-[#050a26]' : 'bg-[#7CECFF]' 
+      isActive ? 'bg-[#ADD8E6]' : 'bg-[#87CEEB]'
     }`}
   />
   
   {/* Centro del Círculo */}
   <div
     className={`absolute inset-[10%] rounded-full transition-colors duration-400 ${
-      isActive ? 'bg-[#FFFFFF]' : 'bg-[#7CECFF]'
+      isActive ? 'bg-[#FFFFFF]' : 'bg-[#050a26]'
     }`}
   />
   
@@ -133,6 +133,7 @@ export default function VoiceAssistant() {
     </div>
   )}
 </div>
+
 
 </motion.div>
 
