@@ -84,9 +84,9 @@ export default function VoiceAssistant() {
       <div className='w-full max-w-xs'>
         {/* Voice Assistant Circle */}
         <motion.div
-          initial={{ scale: 0.8, opacity: 0 }}
+          initial={{ scale: 0.7, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          transition={{ duration: 0.6 }}
           className='relative w-48 h-48 mx-auto mb-8 pt-2'
         >
           {/* Status Badge */}
@@ -111,11 +111,11 @@ export default function VoiceAssistant() {
           {/* Base Circle */}
 <div className='relative w-full h-full'>
   <div
-    className={`absolute inset-0 rounded-full transition-colors duration-300 ${
+    className={`absolute inset-0 rounded-full transition-colors duration-400 ${
       isActive ? 'bg-[#050a26]' : 'bg-[#7CECFF]' 
     }`}
   />
-  <div className='absolute inset-[10%] rounded-full bg-[#050a26]' />
+  <div className='absolute inset-[10%] rounded-full bg-[#7CECFF]' />
   {/* Pulse Effects */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
@@ -136,7 +136,7 @@ export default function VoiceAssistant() {
     onClick={isActive ? endConversation : startConversation}
     className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
       isActive
-        ? 'bg-[#7CECFF] text-[#FAF9F6]'
+        ? 'bg-[#7CECFF] text-[#424242]'
         : 'bg-[#FFFFFF] text-[#424242]'
     }`}
   >
