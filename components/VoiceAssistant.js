@@ -115,7 +115,7 @@ export default function VoiceAssistant() {
       isActive ? 'bg-[#050a26]' : 'bg-[#7CECFF]' 
     }`}
   />
-  <div className='absolute inset-[10%] rounded-full bg-[#7CECFF]' />
+  <div className='absolute inset-[10%] rounded-full bg-[#050a26]' />
   {/* Pulse Effects */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
@@ -185,7 +185,7 @@ export default function VoiceAssistant() {
       </div>
       <div
         ref={scrollAreaRef}
-        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#000000] scrollbar-track-[#424242]'
+        className='h-64 overflow-y-auto p-4 space-y-2 scrollbar-thin scrollbar-thumb-[#050a26] scrollbar-track-[#7CECFF]'
       >
         {messages.map((message, index) => (
           <div
@@ -198,7 +198,7 @@ export default function VoiceAssistant() {
           >
             <div className='flex-shrink-0'>
               {message.source === 'user' ? (
-                <User className='w-6 h-6 text-[#7CECFF]' />
+                <User className='w-6 h-6 text-[#050a26]' />
               ) : (
                 <Bot className='w-6 h-6 text-[#050a26]' />
               )}
