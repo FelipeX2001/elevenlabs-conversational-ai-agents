@@ -120,7 +120,7 @@ export default function VoiceAssistant() {
   {/* Centro del Círculo */}
   <div
     className={`absolute inset-[10%] rounded-full transition-colors duration-400 ${
-      isActive ? 'bg-[#FFFFFF]' : 'bg-[#050a26]'
+      isActive ? 'bg-[#FFFFFF]' : 'bg-[#7CECFF]'
     }`}
   />
   
