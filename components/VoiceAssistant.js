@@ -110,21 +110,30 @@ export default function VoiceAssistant() {
 
           {/* Base Circle */}
 <div className='relative w-full h-full'>
+  {/* Aro Exterior */}
   <div
     className={`absolute inset-0 rounded-full transition-colors duration-400 ${
       isActive ? 'bg-[#050a26]' : 'bg-[#7CECFF]' 
     }`}
   />
-  <div className='absolute inset-[10%] rounded-full bg-[#7CECFF]' />
-  {/* Pulse Effects */}
+  
+  {/* Centro del Círculo */}
+  <div
+    className={`absolute inset-[10%] rounded-full transition-colors duration-400 ${
+      isActive ? 'bg-[#FFFFFF]' : 'bg-[#050a26]'
+    }`}
+  />
+  
+  {/* Efectos de Pulso */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
       <div className='absolute inset-0 rounded-full bg-[#ffffff] opacity-20 animate-pulse-fast' />
       <div className='absolute inset-0 rounded-full bg-[#ffffff] opacity-15 animate-pulse-medium' />
-      <div className='absolute inset-0 rounded-full bg-[#fffff] opacity-10 animate-pulse-slow' />
+      <div className='absolute inset-0 rounded-full bg-[#ffffff] opacity-10 animate-pulse-slow' />
     </div>
   )}
 </div>
+
 </motion.div>
 
 {/* Control Buttons */}
@@ -136,7 +145,7 @@ export default function VoiceAssistant() {
     onClick={isActive ? endConversation : startConversation}
     className={`h-12 px-4 rounded-full flex items-center justify-center mx-auto ${
       isActive
-        ? 'bg-[#7CECFF] text-[#424242]'
+        ? 'bg-[#050a26] text-[#ffffff]'
         : 'bg-[#FFFFFF] text-[#424242]'
     }`}
   >
