@@ -1,15 +1,12 @@
-/* styles/globals.css */
-
-/* Directivas de Tailwind */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Definición de variables y estilos base */
+/* styles/globals.css */
 @layer base {
   :root {
     /* Colores de Fondo y Foreground */
-    --background: 0 0% 100%; /* white: #FFFFFF */
+    --background: 0 0% 0%; /* black: #000000 */
     --foreground: 210 24% 28%; /* dusk: #2C3E50 */
 
     /* Colores de Tarjeta (Card) */
@@ -55,13 +52,6 @@
 
     /* Radio de Bordes */
     --radius: 0.5rem;
-
-    /* Colores de Chart */
-    --chart-1: 51 100% 50%;
-    --chart-2: 197 71% 73%;
-    --chart-3: 60 100% 94%;
-    --chart-4: 15 100% 63%;
-    --chart-5: 122 39% 49%;
   }
 
   .dark {
@@ -112,37 +102,105 @@
   }
 }
 
-/* Aplicación de utilidades personalizadas utilizando clases definidas en Tailwind */
+
 @layer base {
-  /* Aplica el color de borde personalizado a todos los elementos */
   * {
-    @apply border-borderCustom;
+    @apply border-border;
   }
-
-  /* Aplica los colores de fondo y texto personalizados al cuerpo de la página */
   body {
-    @apply bg-bgCustom text-textCustom;
+    @apply bg-background text-foreground;
   }
 }
 
-/* Clase personalizada para el anillo de pulsación sin animación */
-.pulse-ring {
-  @apply absolute w-[70%] h-[70%] rounded-full bg-foreground;
-  /* La animación se aplicará directamente en el HTML/JSX usando clases de Tailwind */
+@keyframes pulse1 {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0;
+  }
 }
 
-/* Nota: Todas las animaciones personalizadas se aplican mediante las clases de Tailwind, por ejemplo: animate-pulse1, animate-glow, etc. */
+@keyframes pulse2 {
+  0% {
+    transform: scale(0.9);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 0.2;
+  }
+  100% {
+    transform: scale(1.1);
+    opacity: 0;
+  }
+}
 
-/* Elimina o comenta cualquier definición de animaciones y clases de animación personalizadas */
-/*
-@keyframes pulse1 { ... }
-@keyframes pulse2 { ... }
-@keyframes pulse { ... }
-@keyframes glow { ... }
+@keyframes pulse {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
 
-.animate-glow { ... }
-.animate-pulse-fast { ... }
-.animate-pulse-medium { ... }
-.animate-pulse-slow { ... }
-*/
+@keyframes glow {
+  0% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
 
+.pulse-ring {
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  border-radius: 50%;
+  background-color: #6EB846;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.animate-glow {
+  animation: glow 2s ease-in-out infinite;
+}
+
+@keyframes pulseEffect {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.25;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-fast {
+  animation: pulseEffect 1.2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-medium {
+  animation: pulseEffect 1.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulseEffect 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
