@@ -112,16 +112,16 @@ export default function VoiceAssistant() {
 <div className='relative w-full h-full'>
   <div
     className={`absolute inset-0 rounded-full transition-colors duration-300 ${
-      isActive ? 'bg-[#7CECFF]' : 'bg-[#7CECFF]'
+      isActive ? 'bg-[#7CECFF]' : 'bg-[#050a26]'
     }`}
   />
   <div className='absolute inset-[10%] rounded-full bg-[#7CECFF]' />
   {/* Pulse Effects */}
   {isSpeaking && (
     <div className='absolute inset-[15%]'>
-      <div className='absolute inset-0 rounded-full bg-[#7CECFF] opacity-20 animate-pulse-fast' />
-      <div className='absolute inset-0 rounded-full bg-[#7CECFF] opacity-15 animate-pulse-medium' />
-      <div className='absolute inset-0 rounded-full bg-[#7CECFF] opacity-10 animate-pulse-slow' />
+      <div className='absolute inset-0 rounded-full bg-[#ffffff] opacity-20 animate-pulse-fast' />
+      <div className='absolute inset-0 rounded-full bg-[#ffffff] opacity-15 animate-pulse-medium' />
+      <div className='absolute inset-0 rounded-full bg-[#fffff] opacity-10 animate-pulse-slow' />
     </div>
   )}
 </div>
@@ -178,7 +178,7 @@ export default function VoiceAssistant() {
       <div className='flex justify-end p-2'>
         <button
           onClick={() => downloadTranscript(messages)}
-          className='text-[#ffdc2e] hover:text-[#7CECFF] transition-colors'
+          className='text-[#050a26] hover:text-[#7CECFF] transition-colors'
         >
           <Download className='w-5 h-5' />
         </button>
@@ -200,7 +200,7 @@ export default function VoiceAssistant() {
               {message.source === 'user' ? (
                 <User className='w-6 h-6 text-[#7CECFF]' />
               ) : (
-                <Bot className='w-6 h-6 text-[#ffdc2e]' />
+                <Bot className='w-6 h-6 text-[#050a26]' />
               )}
             </div>
             <div
