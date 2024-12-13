@@ -5,7 +5,7 @@ const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'AICLON - Voice Assistant',
-  description: 'DEMO - Voice AICLON',
+  description: 'DEMO - Voice AICLON 2',
 }
 
 export default function RootLayout({ children }) {
